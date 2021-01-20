@@ -1,0 +1,14 @@
+<%= form_with url: "/flights", method: :get do |form|%>
+    <%= form.label :From%>
+    <%= select(:get, :from_airport_id, @from_airport)%><br>
+    <%= form.label :To%>
+    <%= select(:get, :to_airport_id, @to_airport)%><br>
+    <%= form.label :Date%>
+    <%= select(:get, :datetime, @datetime)%><br>
+    <%= form.label :Number_of_Tickets%>
+    <%= select(:get, :num_tickets, @num_tickets)%>
+
+    <br><br>
+
+    <%=form.submit%>
+<%end%>
