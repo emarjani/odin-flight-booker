@@ -17,11 +17,12 @@
                     <%=flight.from_airport.code %>
                     <%=flight.to_airport.code%>
                     <%=flight.datetime%>
-                    <%# <%=form.hidden_field :p%> 
-                    <%# <%=hidden_field_tag 'num', :p["num_tickets"] %> %>
-                    <%=form.radio_button :submit, "yes"%>
-                </ul>
+                    <%=flight.id%>
+                
+                    <%=form.radio_button :flight_id, flight.id%>
+                </ul> 
             <%end%>
+            <%=form.hidden_field :num_tickets, value: p["num_tickets"]%>
         </div>
     <%end%>
 <%end%>
