@@ -14,17 +14,9 @@ class Flight < ApplicationRecord
   def date_ymd
     self.datetime.strftime("%Y-%m-%d")
   end
-  
 
-  # def day
-  #   self.datetime.strftime("%d")
-  # end
-  
-  # def month
-  #   self.datetime.strftime("%m")
-  # end
+  def time
+    self.datetime.strftime("%H:%M")
+  end
 
-  # def year 
-  #   self.datetime.strftime("Y")
-  # end
 end

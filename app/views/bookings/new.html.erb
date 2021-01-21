@@ -1,0 +1,21 @@
+<h1>Passenger Form</h1>
+
+<h2>Flight ID</h2>
+<%=@flight.id%>
+
+<h3>Departing from</h3>
+<%=@flight.from_airport.code%>
+
+<h3>Arriving at</h3>
+<%=@flight.to_airport.code%>
+
+<h3>Date</h3>
+<%=@flight.date_dmy%>
+
+<h3>Departure Time</h3>
+<%=@flight.time%>
+
+<h3>Duration</h3>
+<%="#{@flight.duration} minutes"%>
+
+<%= render "booking_form", flight: @flight%>

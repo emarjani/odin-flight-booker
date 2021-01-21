@@ -1,8 +1,6 @@
 class FlightsController < ApplicationController
     def index
-        # @flights = Flight.all
 
-        #
         @from_airport = Flight.all.map{|u| [u.from_airport.code, u.from_airport_id]}.uniq
         @to_airport = Flight.all.map{|u| [u.to_airport.code, u.to_airport_id]}.uniq
         @date = Flight.all.order("datetime ASC").map{|u| [u.date_dmy, u.date_ymd]}.uniq
@@ -10,5 +8,3 @@ class FlightsController < ApplicationController
     end
 end
 
-#strftime("%d/%m/%Y")
-# @day = Flight.all.map{|u| [u.day, u.datetime]}
