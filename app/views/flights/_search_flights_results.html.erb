@@ -1,0 +1,27 @@
+<h1>Flights</h1>
+
+<%= form_with url: "/flights", method: :get do |form|%>
+
+    <%p = params[:get]%>
+
+    <% if p != nil%>
+        <% all_flights = Flight.where(
+            from_airport_id: p["from_id"],
+            to_airport_id: p["to_id"]).check_date(p["date"])
+        %>
+
+        <div>
+            <%=form.submit%>
+            <% all_flights.each do |flight|%>
+                <ul>
+                    <%=flight.from_airport.code %>
+                    <%=flight.to_airport.code%>
+                    <%=flight.datetime%>
+                    <%# <%=form.hidden_field :p%> 
+                    <%# <%=hidden_field_tag 'num', :p["num_tickets"] %> %>
+                    <%=form.radio_button :submit, "yes"%>
+                </ul>
+            <%end%>
+        </div>
+    <%end%>
+<%end%>
