@@ -1,6 +1,8 @@
-<h1>Booking Information</h1>
+<h1><b>Booking Information</b></h1>
 
-<h2>Flight Information</h2>
+<br>
+
+<h2><i>Flight Information</i></h2>
 
 <p>Flight ID</p>
 <%=@booking.flight.id%>
@@ -20,7 +22,9 @@
 <p>Duration</p>
 <%="#{@booking.flight.duration} minutes"%>
 
-<h2>Passenger Info</h2>
+<br><br>
+
+<h2><i>Passenger Info</i></h2>
 
 <%@booking.passengers.each do |p|%>
     <ul>
